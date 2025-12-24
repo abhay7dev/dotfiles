@@ -15,6 +15,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 alias neofetch='fastfetch'
+alias tree='tre'
 
 alias l='ls -lah'
 alias la='ls -lAh'
