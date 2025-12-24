@@ -31,3 +31,5 @@ source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
 eval "$(starship init zsh)"
+
+neofetch -c $HOME/.config/fastfetch/config-small.jsonc

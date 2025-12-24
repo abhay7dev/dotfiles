@@ -34,6 +34,7 @@ To do an update/upgrade of these applications
 brew update # Update homebrew itself
 brew upgrade # Update formulae/casks
 brew cleanup # Clean old versions
+antidote update # Update ZSH plugins
 ```
 
 #### Reproducing folders
