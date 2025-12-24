@@ -1,0 +1,18 @@
+theme = light:Catppuccin Latte, dark:Catppuccin Mocha
+cursor-style = bar
+background-opacity = 0.75
+background-blur = 15
+
+clipboard-paste-protection = false
+
+font-family = FiraCode Nerd Font Mono Ret
+font-family-bold = FiraCode Nerd Font Mono Bold
+font-size = 11
+
+window-padding-x = 2
+window-padding-y = 1
+window-padding-balance = true
+
+macos-icon = xray
+window-colorspace = display-p3
+auto-update = off
