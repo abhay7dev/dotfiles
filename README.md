@@ -16,7 +16,7 @@ This is done on MacOS, though I should be able to reproduce something similar in
 Then using brew, install the following packages
 ```zsh
 # Formulae (Command Line Applications)
-brew install antidote starship tre-command wget # Shell
+brew install antidote starship tre-command wget mas # Shell
 brew install fastfetch pipes-sh # Fun shell stuff
 brew install node openjdk gh # Dev Tools (Dec 2025)
 
@@ -27,14 +27,6 @@ brew install --cask brave-browser firefox # Web Browsers
 brew install --cask visual-studio-code # Dev Tools (Dec 2025)
 brew install --cask amazon-chime microsoft-office microsoft-auto-update # Corporate Apps
 brew install --cask notion plex spotify vesktop # Productivity and Fun
-```
-
-To do an update/upgrade of these applications
-```zsh
-brew update # Update homebrew itself
-brew upgrade # Update formulae/casks
-brew cleanup # Clean old versions
-antidote update # Update ZSH plugins
 ```
 
 #### Reproducing folders
@@ -80,6 +72,14 @@ stow . -t $HOME # stow by default looks 1 directory up, but my setup has $HOME 2
 Stow References:
 * [Useful YT Video (Dreams of Autonomy)](https://www.youtube.com/watch?v=y6XCebnB9gs)
 * [Useful Article (tamerlan)](https://tamerlan.dev/how-i-manage-my-dotfiles-using-gnu-stow/)
+
+#### Updating the system
+
+Using LLMs, I generated `update`, a shell script that updates this system (not including applications that manage themselves). Make the file executable and run to complete a system upgrade.
+```
+chmod +x update
+./update
+```
 
 ### Changelog
 Dec 23, 2025 - Initialized Repository. Contains solely my terminal configuration and some commands

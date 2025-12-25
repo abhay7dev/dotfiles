@@ -1,0 +1,82 @@
+#!/bin/zsh
+set -euo pipefail
+
+# 🎨 Colors
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+YELLOW="\033[0;33m"
+CYAN="\033[0;36m"
+BOLD="\033[1m"
+RESET="\033[0m"
+
+echo "${BOLD}${CYAN}🍺 Updating Homebrew...${RESET}"
+if command -v brew >/dev/null 2>&1; then
+  brew update
+  brew upgrade
+  brew upgrade --cask
+  brew cleanup
+  brew doctor || true
+
+  echo ""
+  echo "${BOLD}${CYAN}🤖 Checking for self-managed (auto-updating) apps...${RESET}"
+
+  self_managed=()
+
+  # Check only outdated casks
+  for c in $(brew outdated --cask --quiet); do
+    if brew info --cask "$c" | grep -q "auto_updates true"; then
+      self_managed+=("$c")
+    fi
+  done
+
+  if (( ${#self_managed[@]} )); then
+    echo "${YELLOW}⬇️  These apps have newer versions but manage their own updates (skipped):${RESET}"
+    for app in "${self_managed[@]}"; do
+      echo "   ${YELLOW}• $app${RESET}"
+    done
+  else
+    echo "${GREEN}👍 No self-managed apps were skipped.${RESET}"
+  fi
+else
+  echo "${YELLOW}➡️ Homebrew not installed — skipping.${RESET}"
+fi
+
+
+echo ""
+echo "${BOLD}${CYAN}🔌 Updating Antidote (zsh plugins)...${RESET}"
+if command -v antidote >/dev/null 2>&1; then
+  antidote update || echo "${YELLOW}⚠️ Antidote update encountered an issue${RESET}"
+else
+  echo "${YELLOW}➡️ Antidote not installed — skipping.${RESET}"
+fi
+
+
+echo ""
+echo "${BOLD}${CYAN}🛍  Updating Mac App Store apps...${RESET}"
+if command -v mas >/dev/null 2>&1; then
+  mas upgrade || echo "${YELLOW}⚠️ mas upgrade encountered an issue${RESET}"
+else
+  echo "${YELLOW}➡️ mas not installed — skipping.${RESET}"
+fi
+
+
+echo ""
+echo "${BOLD}${CYAN}💻 Checking macOS software updates...${RESET}"
+if softwareupdate --list; then
+  echo ""
+  read "?⬆️  ${BOLD}Install all available macOS updates now?${RESET} (Y/n): " RESP
+  RESP=${RESP:-Y}
+
+  if [[ "$RESP" =~ ^[Yy]$ ]]; then
+    echo "${CYAN}🔍 Installing macOS updates (may require your password)…${RESET}"
+    sudo softwareupdate -ia || echo "${YELLOW}⚠️ macOS update skipped/failed${RESET}"
+  else
+    echo "${YELLOW}⏭  Skipping macOS updates.${RESET}"
+  fi
+else
+  echo "${YELLOW}➡️ Could not check macOS updates.${RESET}"
+fi
+
+
+echo ""
+echo "${GREEN}${BOLD}✅ All done!${RESET}"
