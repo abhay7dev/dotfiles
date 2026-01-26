@@ -44,13 +44,12 @@ fi
 
 echo ""
 echo "${BOLD}${CYAN}🔌 Updating Antidote (zsh plugins)...${RESET}"
-
-if command -v zsh >/dev/null 2>&1; then
-  # Run antidote update in an interactive login shell so all environment variables are set
-  NO_FETCH=1 zsh -lic 'antidote update' || echo "${YELLOW}⚠️ Antidote update encountered an issue${RESET}"
+if command -v antidote >/dev/null 2>&1; then
+  antidote update || echo "${YELLOW}⚠️ Antidote update encountered an issue${RESET}"
 else
-  echo "${YELLOW}➡️ zsh not found — skipping Antidote update.${RESET}"
+  echo "${YELLOW}➡️ Antidote not installed — skipping.${RESET}"
 fi
+
 
 echo ""
 echo "${BOLD}${CYAN}🛍  Updating Mac App Store apps...${RESET}"
@@ -65,8 +64,7 @@ echo ""
 echo "${BOLD}${CYAN}💻 Checking macOS software updates...${RESET}"
 if softwareupdate --list; then
   echo ""
-  echo -n -e "${BOLD}⬆️  Install all available macOS updates now? (Y/n): ${RESET}"
-  read RESP
+  read "?⬆️  ${BOLD}Install all available macOS updates now?${RESET} (Y/n): " RESP
   RESP=${RESP:-Y}
 
   if [[ "$RESP" =~ ^[Yy]$ ]]; then

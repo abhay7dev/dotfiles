@@ -32,6 +32,4 @@ antidote load
 
 eval "$(starship init zsh)"
 
-if [[ -o interactive ]] && [[ "$TERM" == "xterm-ghostty" ]] && [[ -z "$NO_FETCH" ]]; then
-  neofetch -c $HOME/.config/fastfetch/config-small.jsonc
-fi
+neofetch -c $HOME/.config/fastfetch/config-small.jsonc
