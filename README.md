@@ -16,7 +16,7 @@ This is done on MacOS, though I should be able to reproduce something similar in
 Then using brew, install the following packages
 ```zsh
 # Formulae (Command Line Applications)
-brew install antidote starship tre-command wget mas # Shell
+brew install antidote starship tre-command wget mas eza # Shell
 brew install fastfetch pipes-sh # Fun shell stuff
 brew install node openjdk gh # Dev Tools (Dec 2025)
 
@@ -82,4 +82,5 @@ chmod +x update
 ```
 
 ### Changelog
+Jan 26, 2025 - Added eza
 Dec 23, 2025 - Initialized Repository. Contains solely my terminal configuration and some commands
