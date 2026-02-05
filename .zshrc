@@ -40,4 +40,10 @@ alias la='eza -lAh --group-directories-first --icons'
 alias ll='eza -lh --group-directories-first --icons'
 alias lsa='eza -lah --group-directories-first --icons'
 
-neofetch -c $HOME/.config/fastfetch/config-small.jsonc
+# Only run neofetch in interactive Ghostty sessions
+# and only if NO_NEOfetch is NOT set
+if [[ -o interactive ]] \
+   && [[ "$TERM" == "xterm-ghostty" ]] \
+   && [[ -z "$NO_NEOfetch" ]]; then
+  neofetch -c "$HOME/.config/fastfetch/config-small.jsonc"
+fi

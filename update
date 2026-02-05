@@ -41,15 +41,14 @@ else
   echo "${YELLOW}➡️ Homebrew not installed — skipping.${RESET}"
 fi
 
-
 echo ""
 echo "${BOLD}${CYAN}🔌 Updating Antidote (zsh plugins)...${RESET}"
-if command -v antidote >/dev/null 2>&1; then
-  antidote update || echo "${YELLOW}⚠️ Antidote update encountered an issue${RESET}"
+if command -v brew >/dev/null 2>&1 && brew list antidote >/dev/null 2>&1; then
+  NO_NEOfetch=1 zsh -lic 'antidote update' \
+    || echo "${YELLOW}⚠️ Antidote update encountered an issue${RESET}"
 else
-  echo "${YELLOW}➡️ Antidote not installed — skipping.${RESET}"
+  echo "${YELLOW}➡️ Antidote not installed via Homebrew — skipping.${RESET}"
 fi
-
 
 echo ""
 echo "${BOLD}${CYAN}🛍  Updating Mac App Store apps...${RESET}"
@@ -58,7 +57,6 @@ if command -v mas >/dev/null 2>&1; then
 else
   echo "${YELLOW}➡️ mas not installed — skipping.${RESET}"
 fi
-
 
 echo ""
 echo "${BOLD}${CYAN}💻 Checking macOS software updates...${RESET}"
