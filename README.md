@@ -15,18 +15,19 @@ This is done on MacOS, though I should be able to reproduce something similar in
 
 Then using brew, install the following packages
 ```zsh
-# Formulae (Command Line Applications)
+# Formulae
 brew install antidote starship tre-command wget mas eza # Shell
 brew install fastfetch pipes-sh # Fun shell stuff
 brew install node openjdk gh # Dev Tools (Dec 2025)
 
-# Casks (GUI applications)
+# Casks
 brew install --cask ghostty font-fira-code-nerd-font # Terminal and Font
 brew install --cask battery-toolkit bitwarden # Utilities
 brew install --cask brave-browser firefox # Web Browsers
 brew install --cask visual-studio-code # Dev Tools (Dec 2025)
 brew install --cask amazon-chime microsoft-office microsoft-auto-update # Corporate Apps
 brew install --cask notion plex spotify vesktop # Productivity and Fun
+brew install --cask cursor claude-code # AI Tools
 ```
 
 #### Reproducing folders
@@ -82,5 +83,6 @@ chmod +x update
 ```
 
 ### Changelog
+Mar 22, 2026 - Added claude-code and cursor
 Jan 26, 2025 - Added eza
 Dec 23, 2025 - Initialized Repository. Contains solely my terminal configuration and some commands
