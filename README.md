@@ -22,12 +22,16 @@ brew install node openjdk gh # Dev Tools (Dec 2025)
 
 # Casks
 brew install --cask ghostty font-fira-code-nerd-font # Terminal and Font
-brew install --cask battery-toolkit bitwarden # Utilities
+brew install --cask bitwarden # Utilities
 brew install --cask brave-browser firefox # Web Browsers
 brew install --cask visual-studio-code # Dev Tools (Dec 2025)
 brew install --cask microsoft-office microsoft-auto-update # Corporate Apps
 brew install --cask notion plex spotify vesktop # Productivity and Fun
 brew install --cask cursor claude-code # AI Tools
+
+# Other
+brew tap mhaeuser/mhaeuser # Archived in March 2026
+brew install --cask battery-toolkit
 ```
 
 #### Reproducing folders
