@@ -22,7 +22,6 @@ brew install node openjdk gh # Dev Tools (Dec 2025)
 
 # Casks
 brew install --cask ghostty font-fira-code-nerd-font # Terminal and Font
-brew install --cask bitwarden # Utilities
 brew install --cask brave-browser firefox # Web Browsers
 brew install --cask visual-studio-code # Dev Tools (Dec 2025)
 brew install --cask microsoft-office microsoft-auto-update # Corporate Apps
