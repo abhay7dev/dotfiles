@@ -16,7 +16,7 @@ This is done on MacOS, though I should be able to reproduce something similar in
 Then using brew, install the following packages
 ```zsh
 # Formulae
-brew install antidote starship tre-command wget mas eza # Shell
+brew install antidote starship tre-command wget mas eza mole # Shell
 brew install fastfetch pipes-sh # Fun shell stuff
 brew install node openjdk gh # Dev Tools (Dec 2025)
 
