@@ -18,6 +18,15 @@ if command -v brew >/dev/null 2>&1; then
   brew doctor || true
 
   echo ""
+  echo "${BOLD}${CYAN}📦 Remaining outdated packages/apps (including greedy casks)...${RESET}"
+  outdated_greedy=$(brew outdated -g || true)
+  if [[ -n "$outdated_greedy" ]]; then
+    echo "${YELLOW}${outdated_greedy}${RESET}"
+  else
+    echo "${GREEN}👍 Nothing currently shown by brew outdated -g.${RESET}"
+  fi
+
+  echo ""
   echo "${BOLD}${CYAN}🤖 Checking for self-managed (auto-updating) apps...${RESET}"
 
   self_managed=()

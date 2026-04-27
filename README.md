@@ -1,6 +1,6 @@
 # Abhay's MacOS Dotfiles
 
-Decided to organize my configuration for future reproducability as well as archival purposes :)
+Decided to organize my configuration for future reproducibility as well as archival purposes :)
 
 This is done on MacOS, though I should be able to reproduce something similar in a Linux system (by using different commands and other minimal changes).
 
