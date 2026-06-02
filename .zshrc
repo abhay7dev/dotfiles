@@ -1,5 +1,6 @@
 #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export EDITOR="nano"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
