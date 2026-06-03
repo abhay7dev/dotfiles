@@ -18,7 +18,7 @@ Then using brew, install the following packages
 # Formulae
 brew install antidote starship tre-command wget mas eza mole # Shell
 brew install fastfetch pipes-sh # Fun shell stuff
-brew install node openjdk gh # Dev Tools (Dec 2025)
+brew install node openjdk python gh # Dev Tools (Dec 2025)
 
 # Casks
 brew install --cask ghostty font-fira-code-nerd-font # Terminal and Font
