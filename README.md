@@ -27,10 +27,6 @@ brew install --cask visual-studio-code # Dev Tools (Dec 2025)
 brew install --cask microsoft-office microsoft-auto-update # Corporate Apps
 brew install --cask notion plex spotify vesktop # Productivity and Fun
 brew install --cask cursor claude-code # AI Tools
-
-# Other
-brew tap mhaeuser/mhaeuser # Archived in March 2026
-brew install --cask battery-toolkit
 ```
 
 #### Reproducing folders
@@ -86,6 +82,7 @@ chmod +x update
 ```
 
 ### Changelog
+Jun 02, 2026 - Made various changes and added/removed some packages
 Mar 22, 2026 - Added claude-code and cursor
 Jan 26, 2025 - Added eza
 Dec 23, 2025 - Initialized Repository. Contains solely my terminal configuration and some commands
